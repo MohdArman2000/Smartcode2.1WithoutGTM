@@ -48,7 +48,23 @@
       }
     </style>
 	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="dff0e203-e3d0-4894-a90a-1974445c2c79" data-blockingmode="auto" type="text/javascript"></script>
-    <script>
+   	<script>
+		window.addEventListener('CookiebotOnAccept', function () {
+			console.log('Cookies are accepted!')
+           window.VWO = window.VWO || [];
+window.VWO.push(['init', 1]);
+        });	
+    
+	</script>
+	  <script>
+		window.addEventListener('CookiebotOnDecline', function () {
+			console.log('Cookies are rejected!')
+           window.VWO = window.VWO || [];
+window.VWO.push(['init', 2]);
+        });
+	</script>
+	  
+	  <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             console.log("DOM content loaded");
         });
