@@ -94,7 +94,24 @@ window.VWO.init(3)
             console.log("DOM content loaded");
         });
     </script>
-    
+		  <script>
+        window.VWO = window.VWO || [];
+        window.VWO.data = window.VWO.data || {};
+        window.VWO.data.acquia = {
+            "drupal": {
+                "title": "Deep mediterranean quiche (VWO data)",
+                "content-type": "recipe",
+                "taxonomy": {
+                    "content_section": ["Desserts", "Main courses"],
+                    "content_keywords": ["Pastry", "Egg", "Mushrooms"],
+                    "persona": ["Experienced chef"]
+                }
+            }
+        };
+
+        console.log("VWO Data:", window.VWO.data);
+    </script>
+	
 
   </head>
 <body>
