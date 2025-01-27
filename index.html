@@ -113,9 +113,10 @@ window.VWO.init(3)
         console.log("VWO Data:", window.VWO.data);
     </script>
 	  <script>
-	  window.VWO = window.VWO || [];
+window.VWO = window.VWO || [];
 VWO.push(['onVariationApplied', function (data) {
-      console.log("Event Fired: " , data)
+    console.log("onVariationApplied called");
+    console.log("Event Fired: ", data);
 }]);
 	  </script>
 	
