@@ -71,24 +71,7 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 	</script>
 <!-- End VWO Async SmartCode -->
 	
-   	<script>
-		window.addEventListener('CookiebotOnAccept', function () {
-        window.VWO = window.VWO || [];
-window.VWO.init = window.VWO.init || function(state) {window.VWO.consentState = state;}
-window.VWO.init(1)
-		console.log('Cookies are Accepted!')
-        });
-		
-	</script>
-	  <script>
-		  window.addEventListener('CookiebotOnDecline', function () {
-           	window.VWO = window.VWO || [];
-window.VWO.init = window.VWO.init || function(state) {window.VWO.consentState = state;}
-window.VWO.init(3)
-		  console.log('Cookies are Rejected!')
-        });
-		
-	</script>
+   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="947aeeb7-5cb7-4870-b83c-cb37c76d5329" data-blockingmode="auto" type="text/javascript"></script>
 	  
 	  <script>
         document.addEventListener("DOMContentLoaded", function(event) {
