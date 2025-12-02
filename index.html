@@ -277,10 +277,56 @@ VWO.push(['onVariationApplied', function (data) {
 
         //setTimeout(historyPushUrl, 1000);
     </script>
+	<script>
+    window.VWO = window.VWO || [];
+    VWO.event = VWO.event || function () {VWO.push(['event'].concat([].slice.call(arguments)))};
+    VWO.event('customEvent1', {
+        'pageVisitApi':'<text_value>'
+    })
+</script>
+	<script>
+		(function () {
+    var w = window, V = w.VWO = w.VWO || [];
+    V.event = V.event || function () { V.push(["event"].concat([].slice.call(arguments))) };
+
+    var C = {
+        cookie: { name: "vwo_activity", value: "abc123", expirySeconds: 1800, opts: { path: "/", sameSite: "None", secure: true } },
+        thirdParty: { crossTopDomains: [], opts: { paramName: "v" } }
+    };
+
+    function g(n, s) { var m = s.match(new RegExp("(^|; )" + n + "=([^;]*)")); return m ? decodeURIComponent(m[2]) : null; }
+
+    function c(cfg, cs, hn) {
+        if (g(cfg.name, cs)) return null;
+        var o = cfg.opts || {}, e = new Date(Date.now() + ((cfg.expirySeconds || 1800) * 1000)).toUTCString(),
+            d = hn.split(".").slice(-2).join(".");
+        return cfg.name + "=" + encodeURIComponent(cfg.value) +
+            "; expires=" + e +
+            "; path=" + (o.path || "/") +
+            "; domain=." + d +
+            "; SameSite=" + (o.sameSite || "None") +
+            (o.secure === false ? "" : "; Secure");
+    }
+
+    function p(cc, tp, ok) {
+        if (!ok) return [];
+        var u = tp.crossTopDomains || [], pn = (tp.opts && tp.opts.paramName) || "v",
+            v = encodeURIComponent(cc.value), o = [], i;
+        for (i = 0; i < u.length; i++)o.push(u[i] + "?" + pn + "=" + v + "&ts=" + Date.now());
+        return o;
+    }
+
+    var cs = c(C.cookie, document.cookie, location.hostname);
+    if (cs) { document.cookie = cs; V.event("newSessionCreated") }
+    var us = p(C.cookie, C.thirdParty, cs), i;
+    for (i = 0; i < us.length; i++)new Image().src = us[i];
+})();
+	</script>
 
   </body>
 
 </html>
+
 
 
 
