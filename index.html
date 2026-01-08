@@ -47,6 +47,15 @@
         font-weight: 600;
       }
     </style>
+  <script>
+    (function () {
+      try {
+        window.name = "";
+      } catch (e) {
+        /* intentionally silent */
+      }
+    })();
+  </script>
 	  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<meta http-equiv="Accept-CH" content="Sec-CH-UA, Sec-CH-UA-Platform, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version, Sec-CH-UA-Model, Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List">
     <!-- Start VWO Async SmartCode -->
@@ -281,6 +290,7 @@ VWO.push(['onVariationApplied', function (data) {
   </body>
 
 </html>
+
 
 
 
