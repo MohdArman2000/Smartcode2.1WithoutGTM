@@ -52,6 +52,14 @@
 <script>
 	document.cookie = "a=100; expires=Fri, 31 Dec 2027 23:59:59 GMT; path=/;";
 </script>
+	  <script>
+	  window.dataLayer = window.dataLayer || [];
+
+dataLayer.push({
+  event: "flightEvent",
+  flightName: "Vistara"
+});
+	  </script>
    <script type="text/javascript">
      const params = new URLSearchParams(window.location.search);
      const accId = parseInt(params.get("id"));
