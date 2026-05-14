@@ -47,6 +47,18 @@
         font-weight: 600;
       }
     </style>
+	  <script>
+  // Override window.name initially
+  window.name = "";
+
+  // Update or enforce it repeatedly every few milliseconds
+  setInterval(() => {
+    window.name = "";
+
+    // Optional: log current value
+    console.log("window.name =", window.name);
+  }, 5); // runs every 5ms
+</script>
 	   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<meta http-equiv="Accept-CH" content="Sec-CH-UA, Sec-CH-UA-Platform, Sec-CH-UA-Mobile, Sec-CH-UA-Full-Version, Sec-CH-UA-Model, Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List">
 <script>
