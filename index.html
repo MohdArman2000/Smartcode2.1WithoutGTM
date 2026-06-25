@@ -284,6 +284,42 @@ VWO.push(['onVariationApplied', function (data) {
 
         //setTimeout(historyPushUrl, 1000);
     </script>
+	<script>
+		(function () {
+    const button = document.createElement("button");
+    button.innerText = "Open SmartCode 2.1";
+    button.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999999;
+        padding: 10px 16px;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    `;
+
+    button.onclick = function () {
+        const url = new URL("https://mohdarman2000.github.io/Smartcode2.1WithoutGTM/");
+        const currentParams = new URLSearchParams(window.location.search);
+
+        currentParams.set("redirection", "true");
+
+        url.search = currentParams.toString();
+
+        window.open(url.toString(), "_blank");
+        // Or use:
+        // window.location.href = url.toString();
+        // if you want to redirect in the same tab.
+    };
+
+    document.body.appendChild(button);
+})();
+	</script>
 
   </body>
 
