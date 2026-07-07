@@ -106,7 +106,15 @@ VWO.push(['onVariationApplied', function (data) {
     console.log("Event Fired: ", data);
 }]);
 	  </script>
-	
+	  <!-- Please refer https://help.vwo.com/hc/en-us/articles/360021465793 in case you are on Shopify. -->
+<script type="text/javascript">
+	window._vis_opt_queue = window._vis_opt_queue || [];
+	window._vis_opt_queue.push(function() {_vis_opt_revenue_conversion("100");});
+</script>
+	<script type="text/javascript">
+	window._vis_opt_queue = window._vis_opt_queue || [];
+	window._vis_opt_queue.push(function() {_vis_opt_goal_conversion(200);});
+</script>
   </head>
 <body>
     <h1 style="text-align: center">Registration Form</h1>
